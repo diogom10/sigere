@@ -17,5 +17,6 @@
                     <?= view('view_login_cadastro')->render() ?>
                 </div>
             </div>
+        </div>
     </body>
 </html>
