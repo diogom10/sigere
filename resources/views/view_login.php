@@ -16,7 +16,7 @@
         
         <div class="col-md-4 col-sm-4 col-xs-4 col-lg-4"></div>
         <button class="btn btn-danger" data-toggle="popover" title="Popover Header" data-content="Some content inside the popover">teste</button>
-        
+        <div>teste<div>
          <?= view('view_login_cadastro')->render() ?>
         </div>
         
