@@ -9,17 +9,13 @@
         <script src="<?= url('/'); ?>/js/angular/service/login/loginService.js"></script>
     </head>
     <body>
-
         <div ng-controller="loginCtrl">
-            <h1 >PRIMEIRA VIEW</h1>
+            <h1>PRIMEIRA VIEW</h1>
             <div class="container-fluid">
                 <div class="col-md-12 col-sm-12 col-xs-12 col-lg-12">
                     <button  type="button" ng-click="teste()" class="btn btn-danger" data-toggle="popover">teste</button>
                     <?= view('view_login_cadastro')->render() ?>
                 </div>
             </div>
-
-
-
     </body>
 </html>
