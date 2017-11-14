@@ -16,3 +16,4 @@ Route::get('/', function () {
 });
 
 Route::any('/login','Login@setLogin');
+Route::any('/Cadastro','Login@setCadastro');

@@ -1,11 +1,15 @@
-
 angular.module("sigere_login", []);
 angular.module("sigere_login").controller("loginCtrl", ['$scope', '$http', 'loginService', function ($scope, $http, loginService) {
+           $scope.cadastro =  {nome:"" , email:"", senha:""};
 
-        $scope.teste = function () {
-
-              var PopoverTags = angular.element("#view");
+        $scope.cadastrar = function () {
       
+                       loginService.setCadastro($scope.cadastro ,'Cadastro').then(function(response){
+                     if(response.data.success){
+                         $scope.msgErro = response.data.msg;
+                     }
+                           
+                       });
         };
 
         $(document).ready(function () {
