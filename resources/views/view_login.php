@@ -24,14 +24,13 @@
                                         <h2 class="text-center">Bem Vindo!</h2>
                                         <h3 class="text-center">Por favor, digite seu usuário e senha </h3>
 
-                                        <form method="POST" action="">
                                             <!--<label>Usuário</label>-->
-                                            <input type="text" name="usuario" placeholder="Username" class="form-control"><br>
+                                            <input type="text" name="usuario" placeholder="Email" ng-model="login.email" class="form-control"><br>
 
                                             <!--<label>Senha</label>-->
-                                            <input type="password" name="senha" placeholder="senha" class="form-control"><br>
+                                            <input type="password" name="senha" placeholder="Senha" ng-model="login.senha" class="form-control"><br>
 
-                                            <input type="submit" name="btnLogin" value="Log in" class="btn btn-info btn-block">
+                                            <input type="submit" name="btnLogin"  ng-click="getLogin()" value="Log in" class="btn btn-info btn-block">
 
                                             <div class="row"> 
                                                 <div class="col-md-6 col-sm-12 col-xs-12 col-lg-6">
@@ -42,7 +41,7 @@
                                                 </div>
 
                                             </div>
-                                        </form>
+                                     
                                         <?= view('view_login_cadastro')->render() ?>
                                     </div>
 
