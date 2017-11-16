@@ -17,7 +17,6 @@ class Login extends Controller {
         $model = new loginModel();
         $Response = [];
 
-
         $insert = [
             "user_name" => $dados->nome,
             "user_email" => $dados->email,
@@ -42,18 +41,29 @@ class Login extends Controller {
         $user = Lib_login::validateLogin($dados);
         switch ($user["validate"]) {
             case 1:
-                print_r('USUARIO NÃO EXISTE') . die();
+            ;
+                $Response['success'] = false;
+                $Response['msg'] = 'Usuario não existe';
                 break;
 
             case 2:
-                print_r('SENHA INCORRETA') . die();
+                $Response['success'] = false;
+                $Response['msg'] = 'Senha incorreta';
                 break;
 
             case 3:
-                print_r('APROVADO');
-                  print_r($user['data']) . die();
+                
+                $Response['success'] = true;
+                session([
+                    'user_id' => $user['data']->user_id,
+                    'user_name' => $user['data']->user_name,
+                    'user_status_login' => true
+                ]);
                 break;
         }
+        
+        print_r(session()->get()).die();
+        echo json_encode($Response);
     }
 
 }
