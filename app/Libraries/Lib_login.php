@@ -10,10 +10,10 @@ class Lib_login{
        $query = DB::table('tb_user')
                  ->where('user_email' , $Data['email'])
                  ->get();
-       
+
        if(count($query) < 1 ){
              $Retorno['validate'] = 1;
-                $validate = false;
+             $validate = false;
        }else if($query[0]->user_password != $Data['senha']){
            $Retorno['validate'] = 2;
               $validate = false;
@@ -30,9 +30,10 @@ class Lib_login{
   
   
    public static function validateCadastro($Data){
+       
          $query = DB::table('tb_user')
                  ->select('user_email')
-                 ->where('user_email' , $Data['email'])
+                 ->where('user_email' , $Data)
                  ->get();
         return $query;
   }

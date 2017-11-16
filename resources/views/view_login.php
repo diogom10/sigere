@@ -11,7 +11,6 @@
     </head>
     <body>
         <div ng-controller="loginCtrl">
-
                 <div class="container">
                     <div class="col-md-12 col-sm-12 col-xs-12 col-lg-12 ctrl-bottom"></div>
                      <div class="col-md-1 col-sm-12 col-xs-12 col-lg-1 ctrl-right"></div>

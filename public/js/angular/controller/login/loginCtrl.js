@@ -3,7 +3,11 @@ angular.module("sigere_login").controller("loginCtrl", ['$scope', '$http', 'logi
         $scope.cadastro = {nome: "", email: "", senha: ""};
         $scope.login = {email: "", senha: ""};
         $scope.error = false;
-        
+
+
+
+
+
         $scope.cadastrar = function () {
             loginService.setCadastro($scope.cadastro, 'Cadastro').then(function (response) {
                 if (response.data.success) {
@@ -17,15 +21,17 @@ angular.module("sigere_login").controller("loginCtrl", ['$scope', '$http', 'logi
         };
 
 
-     $scope.getLogin = function () {
-            loginService.setCadastro($scope.login, 'getLogin').then(function (response) {
+        $scope.getLogin = function () {
+            loginService.getLogin($scope.login, 'getLogin').then(function (response) {
+
                 if (response.data.success) {
-                    $scope.msgErro = response.data.msg;
-                    $scope.error = false;
+                    window.location.assign('http://localhost/sigere/public/home');
+
                 } else {
                     $scope.error = true;
                     $scope.msgErro = response.data.msg;
                 }
+
             });
         };
 

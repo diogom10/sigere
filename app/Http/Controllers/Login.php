@@ -20,7 +20,7 @@ class Login extends Controller {
         $insert = [
             "user_name" => $dados->nome,
             "user_email" => $dados->email,
-            "user_password" => $dados->senha . Config::HASH,
+            "user_password" => $dados->senha
         ];
 
         $validate = Lib_login::validateCadastro($insert["user_email"]);
@@ -28,10 +28,12 @@ class Login extends Controller {
         if (count($validate) < 1) {
             $Response['success'] = $model->cadastrar($insert);
             $Response['msg'] = 'Usuario cadastrado com sucesso';
+       
         } else {
             $Response['success'] = false;
             $Response['msg'] = 'Email ja existe';
         }
+        
         echo json_encode($Response);
     }
 
@@ -41,7 +43,6 @@ class Login extends Controller {
         $user = Lib_login::validateLogin($dados);
         switch ($user["validate"]) {
             case 1:
-            ;
                 $Response['success'] = false;
                 $Response['msg'] = 'Usuario não existe';
                 break;
@@ -62,7 +63,7 @@ class Login extends Controller {
                 break;
         }
         
-        print_r(session()->get()).die();
+        
         echo json_encode($Response);
     }
 
