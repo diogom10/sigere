@@ -7,13 +7,27 @@ and open the template in the editor.
     Created on : 13/11/2017, 21:09:12
     Author     : diogo
 */
-.ctrl-bottom {
-  margin-bottom: 20%; }
-
-.ctrl-right {
-  margin-right: 10%; }
-
-.cadastro {
-  float: right; }
+body {
+  overflow: hidden; }
+  body .cabecalho {
+    padding-bottom: 80px;
+    background-color: #4fa7c1;
+    margin-bottom: 10%;
+    max-height: 60px; }
+    body .cabecalho .title-login {
+      text-align: center;
+      color: #fff;
+      font-size: 50px;
+      font-family: arial; }
+  body .ctrl-right {
+    margin-right: 13%; }
+  body .cadastro {
+    float: right; }
+  body .rodape {
+    margin-top: 22%;
+    padding-bottom: 64px;
+    background-color: #4fa7c1;
+    position: fixed;
+    bottom: 0; }
 
 /*# sourceMappingURL=login.css.map */

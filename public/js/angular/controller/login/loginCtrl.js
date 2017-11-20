@@ -1,15 +1,14 @@
 angular.module("sigere_login", []);
 angular.module("sigere_login").controller("loginCtrl", ['$scope', '$http', 'loginService', function ($scope, $http, loginService) {
+        $scope.session = angular.element('#session').val();
+        var base_url = angular.element('#url').val() + '/index/';
+        $scope.session ? window.location.assign(base_url + 'home') : false;
+        
         $scope.cadastro = {nome: "", email: "", senha: ""};
         $scope.login = {email: "", senha: ""};
         $scope.error = false;
-
-
-
-
-
         $scope.cadastrar = function () {
-            loginService.setCadastro($scope.cadastro, 'Cadastro').then(function (response) {
+            loginService.setCadastro($scope.cadastro, base_url + 'Cadastro').then(function (response) {
                 if (response.data.success) {
                     $scope.msgErro = response.data.msg;
                     $scope.error = false;
@@ -22,11 +21,9 @@ angular.module("sigere_login").controller("loginCtrl", ['$scope', '$http', 'logi
 
 
         $scope.getLogin = function () {
-            loginService.getLogin($scope.login, 'getLogin').then(function (response) {
-
+            loginService.getLogin($scope.login, base_url + 'getLogin').then(function (response) {
                 if (response.data.success) {
-                    window.location.assign('http://localhost/sigere/public/home');
-
+                    window.location.assign(base_url + '/home');
                 } else {
                     $scope.error = true;
                     $scope.msgErro = response.data.msg;
