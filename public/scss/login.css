@@ -29,5 +29,9 @@ body {
     background-color: #4fa7c1;
     position: fixed;
     bottom: 0; }
+  body .p-erro {
+    position: relative;
+    margin-left: 10%;
+    margin-top: 2%; }
 
 /*# sourceMappingURL=login.css.map */

@@ -20,7 +20,7 @@ class Login extends Controller {
         $insert = [
             "user_name" => $dados->nome,
             "user_email" => $dados->email,
-            "user_password" => $dados->senha
+            "user_password" => md5($dados->senha . HASH)
         ];
 
         $validate = Lib_login::validateCadastro($insert["user_email"]);
