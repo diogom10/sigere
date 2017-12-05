@@ -4,7 +4,7 @@ angular.module("sigere_login").controller("loginCtrl", ['$scope', '$http', 'logi
         $scope.msgErroLogin;
         $scope.errorLogin = false;
 
-        var base_url = angular.element('#url').val() + "/index.php";
+        var base_url = angular.element('#url').val() ;
         $scope.cadastro = {nome: "", email: "", senha: ""};
         $scope.login = {email: "", senha: ""};
         $scope.error = false;
@@ -12,7 +12,7 @@ angular.module("sigere_login").controller("loginCtrl", ['$scope', '$http', 'logi
 
         
         $scope.cadastrar = function () {
-            loginService.setCadastro($scope.cadastro, base_url + 'Cadastro').then(function (response) {
+            loginService.setCadastro($scope.cadastro, base_url +"/index.php"+ '/Cadastro').then(function (response) {
                 if (response.data.success) {
                     $scope.msgErro = response.data.msg;
                     $scope.error = false;
@@ -27,7 +27,7 @@ angular.module("sigere_login").controller("loginCtrl", ['$scope', '$http', 'logi
         $scope.getLogin = function () {
             if ($scope.login.email != "" && $scope.login.senha != "") {
 
-                loginService.getLogin($scope.login, base_url + '/getLogin').then(function (response) {
+                loginService.getLogin($scope.login, base_url +"/index.php"+ '/getLogin').then(function (response) {
                     if (response.data.success) {
                         window.location.assign(base_url + '/home');
                     } else {

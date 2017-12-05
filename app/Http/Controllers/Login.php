@@ -9,7 +9,7 @@ use App\Libraries\Lib_login;
 class Login extends Controller {
 
     public function setLogin() {
-        return view('view_login');
+        return view('login/view_login');
     }
 
     public function setCadastro(Request $dados) {

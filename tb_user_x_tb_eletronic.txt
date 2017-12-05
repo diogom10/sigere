@@ -1,0 +1,35 @@
+CREATE TABLE `sigere`.`tb_user_x_tb_eletronic` (
+  `id` INT NOT NULL AUTO_INCREMENT,
+  `id_user_fk` INT NOT NULL,
+  `id_eletronic_fk` INT NOT NULL,
+  PRIMARY KEY (`id`));
+
+
+
+=====================================================================================================================
+
+
+
+
+INSERT INTO `sigere`.`tb_eletronic` (`eletronic_type`) VALUES ('Geladeira');
+INSERT INTO `sigere`.`tb_eletronic` (`eletronic_type`) VALUES ('Chuveiro');
+INSERT INTO `sigere`.`tb_eletronic` (`eletronic_type`) VALUES ('Microondas');
+INSERT INTO `sigere`.`tb_eletronic` (`eletronic_type`) VALUES ('Televisão');
+INSERT INTO `sigere`.`tb_eletronic` (`eletronic_type`) VALUES ('Som');
+INSERT INTO `sigere`.`tb_eletronic` (`eletronic_type`) VALUES ('Computador');
+INSERT INTO `sigere`.`tb_eletronic` (`eletronic_type`) VALUES ('Tomadas em Geral');
+INSERT INTO `sigere`.`tb_eletronic` (`eletronic_type`) VALUES ('Outros');
+
+
+
+
+
+
+
+=====================================================================================================================
+
+
+ALTER TABLE `sigere`.`tb_data` 
+ADD COLUMN `data_dia_da_semana` VARCHAR(50) NOT NULL AFTER `data_hora`;
+
+

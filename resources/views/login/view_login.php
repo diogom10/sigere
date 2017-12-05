@@ -57,7 +57,7 @@
                                         <div class="p-erro" ng-show="errorLogin">
                                             <span class=" alert alert-danger" ng-bind="msgErroLogin" ></span>
                                         </div>
-                                        <?= view('view_login_cadastro')->render() ?>
+                                        <?= view('login/view_login_cadastro')->render() ?>
                                     </div>
 
                                 </div>
