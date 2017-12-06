@@ -20,6 +20,7 @@
         <input type="hidden" id="user_id" value="<?= session()->get('user_id'); ?>">
 
         <?php
+        $teste = [ '1' , '2', '2'];
         if (!session()->get('user_status_login')) {
             header("Location:" . url('/') . "/login");
             die();
@@ -32,19 +33,14 @@
             </div>
 
             <?= view('home/modal_logout')->render(); ?>
-            <div class="col-md-12 col-sm-12 col-xs-6 col-lg-6">
-                <canvas id="line" class="chart chart-line ng-isolate-scope" chart-data="data2"
-                        chart-labels="labels" chart-series="series" chart-options="options"
-                        chart-dataset-override="datasetOverride" chart-click="onClick">
-                </canvas>
+
+            <div ng-repeat="a in array track by $index" ng-init="graficos($index , teste)">
+              <div class="col-md-12 col-sm-12 col-xs-4 col-lg-4">
+                  <h1>{{$index}}</h1>
+                <canvas id="line" class="chart chart-line ng-isolate-scope" chart-data="data[$index]" chart-labels="labels[$index]" chart-series="series" chart-options="options"></canvas>
+             </div>
             </div>
 
-            <div class="col-md-12 col-sm-12 col-xs-6 col-lg-6">
-                <canvas id="line" class="chart chart-line ng-isolate-scope" chart-data="data"
-                        chart-labels="labels" chart-series="series" chart-options="options"
-                        chart-dataset-override="datasetOverride" chart-click="onClick">
-                </canvas>
-            </div>
 
             <div class="col-md-12 col-sm-12 col-xs-12 col-lg-12 rodape" ></div>
             <?php

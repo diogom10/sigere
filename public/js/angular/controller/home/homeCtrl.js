@@ -4,8 +4,10 @@ angular.module("sigere_home" , ["chart.js"] ).controller("homeCtrl", ['$scope', 
         $scope.session = angular.element('#session').val();
         var base_url = angular.element('#url').val();
         var user_id = angular.element('#user_id').val();
-        
-        
+        $scope.labels = [];
+        $scope.series = [];
+        $scope.data = [] ;
+        $scope.array = ['1' , '2' , '3'];
 
         $scope.logoutOff = function () {
 
@@ -22,49 +24,48 @@ angular.module("sigere_home" , ["chart.js"] ).controller("homeCtrl", ['$scope', 
             $("#MyModal").modal();
         });
 
-         
-        $scope.labels = ["January", "February", "March", "April", "May", "June", "July"];
-        $scope.series = ['Series B'];
-        $scope.data1 = [
-            [100, 0, 60, 70, 80, 10, 400]
-        ];
-        $scope.onClick = function (points, evt) {
-            console.log(points, evt);
-        };
-        $scope.datasetOverride = [{yAxisID: '2'}];
-        $scope.options = {
-            scales: {
-                yAxes: [
-                    {
-                        id: '1',
-                        type: 'linear',
-                        display: true,
-                        position: 'left'
-                    }
-                ]
-            }
-        }; 
-        
-        
-        $scope.labels = ["January", "February", "March", "April", "May", "June", "July"];
-        $scope.series = ['Series A'];
-        $scope.data2 = [
-            [100, 1000, 60, 70, 80, 10, 400]
-        ];
-        $scope.onClick = function (points, evt) {
-            console.log(points, evt);
-        };
-        $scope.datasetOverride = [{yAxisID: '1'}];
-        $scope.options = {
-            scales: {
-                yAxes: [
-                    {
-                        id: '1',
-                        type: 'linear',
-                        display: true,
-                        position: 'left'
-                    }
-                ]
-            }
-        };
+    $scope.teste = [
+        ["January", "February", "March", "April"],
+        ["January", "February", "March", "April", "May", "June", "July"],
+        ["January", "February", "March", "April", "May", "June"]
+    ]
+
+
+$scope.graficos = function(index , labels) {
+
+    $scope.labels[index] = labels[index];
+    $scope.series = ['Series B'];
+    $scope.data[index] = [
+        [100, 0, 60, 70, 80, 10, 40],
+];
+
+    $scope.onClick = function (points, evt) {
+        console.log(points, evt);
+    };
+    $scope.datasetOverride = [{yAxisID: '1'}];
+    $scope.options = {
+        scales: {
+            yAxes: [
+                {
+                    id: '1',
+                    type: 'linear',
+                    display: true,
+                    position: 'left'
+                }
+            ]
+        }
+    };
+
+};
+
+
+  //
+  // $scope.array.forEach(function( value , index){
+  //     $scope.graficos(index);
+  // });
+
+
+
+
+
     }]);
