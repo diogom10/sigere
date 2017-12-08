@@ -32,20 +32,17 @@
             </div>
 
             <?= view('home/modal_logout')->render(); ?>
-            <div class="col-md-12 col-sm-12 col-xs-6 col-lg-6">
-                <canvas id="line" class="chart chart-line ng-isolate-scope" chart-data="data2"
-                        chart-labels="labels" chart-series="series" chart-options="options"
-                        chart-dataset-override="datasetOverride" chart-click="onClick">
-                </canvas>
-            </div>
 
-            <div class="col-md-12 col-sm-12 col-xs-6 col-lg-6">
-                <canvas id="line" class="chart chart-line ng-isolate-scope" chart-data="data"
-                        chart-labels="labels" chart-series="series" chart-options="options"
-                        chart-dataset-override="datasetOverride" chart-click="onClick">
-                </canvas>
-            </div>
 
+          
+             
+                <div class="col-md-3 col-sm-12 col-xs-12 col-lg-3">
+                    <canvas id="line" class="chart chart-line ng-isolate-scope" chart-data="data"
+                            chart-labels="labels" chart-series="series" chart-options="options"
+                            chart-dataset-override="datasetOverride" chart-click="onClick">
+                    </canvas>
+                </div>
+         
             <div class="col-md-12 col-sm-12 col-xs-12 col-lg-12 rodape" ></div>
             <?php
         }
