@@ -20,6 +20,7 @@
         <input type="hidden" id="user_id" value="<?= session()->get('user_id'); ?>">
 
         <?php
+        $teste = [ '1' , '2', '2'];
         if (!session()->get('user_status_login')) {
             header("Location:" . url('/') . "/login");
             die();
@@ -33,6 +34,7 @@
 
             <?= view('home/modal_logout')->render(); ?>
 
+<<<<<<< HEAD
 
           
              
@@ -43,6 +45,16 @@
                     </canvas>
                 </div>
          
+=======
+            <div ng-repeat="a in array track by $index" ng-init="graficos($index , teste)">
+              <div class="col-md-12 col-sm-12 col-xs-4 col-lg-4">
+                  <h1>{{$index}}</h1>
+                <canvas id="line" class="chart chart-line ng-isolate-scope" chart-data="data[$index]" chart-labels="labels[$index]" chart-series="series" chart-options="options"></canvas>
+             </div>
+            </div>
+
+
+>>>>>>> bdf3e89cf88760425e609734551edde9f7ac7ab6
             <div class="col-md-12 col-sm-12 col-xs-12 col-lg-12 rodape" ></div>
             <?php
         }

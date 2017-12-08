@@ -14,7 +14,7 @@ class Lib_login{
        if(count($query) < 1 ){
              $Retorno['validate'] = 1;
              $validate = false;
-       }else if($query[0]->user_password != $Data['senha']){
+       }else if($query[0]->user_password !=  md5($Data['senha'] . HASH)){
            $Retorno['validate'] = 2;
               $validate = false;
        }else if($validate){
