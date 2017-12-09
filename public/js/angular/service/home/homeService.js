@@ -11,19 +11,20 @@ angular.module("sigere_home").service('homeService', ['$http', function ($http) 
                 headers: {'Content-Type': 'application/x-www-form-urlencoded'}
             });
         };
-         var __getGraficos = function (parametros, url) {
+
+         var __getEnergia = function (parametros, url) {
 
             return $http({
                 method: 'POST',
                 url: url,
-                data: $.param({id:parametros}),
+                data: $.param({user_id:parametros}),
                 headers: {'Content-Type': 'application/x-www-form-urlencoded'}
             });
         };
 
         return {
             logout: __logout,
-            getGraficos : __getGraficos
+            getEnergia:__getEnergia
         };
 
     }]);

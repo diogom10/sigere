@@ -34,18 +34,6 @@
 
             <?= view('home/modal_logout')->render(); ?>
 
-<<<<<<< HEAD
-
-          
-             
-                <div class="col-md-3 col-sm-12 col-xs-12 col-lg-3">
-                    <canvas id="line" class="chart chart-line ng-isolate-scope" chart-data="data"
-                            chart-labels="labels" chart-series="series" chart-options="options"
-                            chart-dataset-override="datasetOverride" chart-click="onClick">
-                    </canvas>
-                </div>
-         
-=======
             <div ng-repeat="a in array track by $index" ng-init="graficos($index , teste)">
               <div class="col-md-12 col-sm-12 col-xs-4 col-lg-4">
                   <h1>{{$index}}</h1>
@@ -54,7 +42,7 @@
             </div>
 
 
->>>>>>> bdf3e89cf88760425e609734551edde9f7ac7ab6
+
             <div class="col-md-12 col-sm-12 col-xs-12 col-lg-12 rodape" ></div>
             <?php
         }

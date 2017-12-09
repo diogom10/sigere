@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Libraries\Lib_Energia;
 
 class Home extends Controller {
 
@@ -19,6 +20,22 @@ class Home extends Controller {
         }
         
          echo json_encode($Response);
+    }
+
+    public function getEnergia(Request $Dados) {
+
+        $Response = [];
+
+        $eletronics = Lib_energia::getEletronic($Dados["user_id"]);
+
+        if(count($eletronics) > 0){
+
+            $energia_data = Lib_energia::getDataEnergia($Dados["user_id"] ,  $eletronics );
+        }else{
+            $Response['success'] = false;
+            $Response['msg'] = "Usuario Não Cadastrou Nenhum Aparelho";
+        }
+
     }
 
 }

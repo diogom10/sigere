@@ -26,28 +26,7 @@ angular.module("sigere_home", ["chart.js"]).controller("homeCtrl", ['$scope', '$
         $(document).ready(function () {
             $("#MyModal").modal();
         });
-          
-            $scope.labels = $scope.dia;
-            $scope.series = ['R$'];
-            $scope.data = [
-                [100, 0, 60, 70, 80, 10, 400]
-            ];
-            $scope.onClick = function (points, evt) {
-                console.log(points, evt);
-            };
-            $scope.datasetOverride = [{yAxisID: '1'}];
-            $scope.options = {
-                scales: {
-                    yAxes: [
-                        {
-                            id: '1',
-                            type: 'linear',
-                            display: true,
-                            position: 'left'
-                        }
-                    ]
-                }
-            };
+
 
 
     $scope.teste = [
@@ -62,7 +41,7 @@ $scope.graficos = function(index , labels) {
     $scope.labels[index] = labels[index];
     $scope.series = ['Series B'];
     $scope.data[index] = [
-        [100, 0, 60, 70, 80, 10, 40],
+        [100, 0, 60, 70, 80, 10, 40]
 ];
 
     $scope.onClick = function (points, evt) {
@@ -84,12 +63,19 @@ $scope.graficos = function(index , labels) {
 
 };
 
+    $scope.energia = function() {
 
-  //
-  // $scope.array.forEach(function( value , index){
-  //     $scope.graficos(index);
-  // });
+        homeService.getEnergia(user_id, base_url+"/getEnergia").then(function (response) {
+            if (response.data.success) {
 
+            } else {
+
+            }
+        });
+    };
+
+
+    $scope.energia();
 
 
 
