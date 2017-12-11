@@ -27,10 +27,32 @@
         } else {
             ?>
 
-            <div class="col-md-12 col-sm-12 col-xs-12 col-lg-12 cabecalho">
+        <div class="col-md-12 col-sm-12 col-xs-12 col-lg-12 cabecalho">
                 <span class=" col-md-11 col-sm-11 col-xs-11 col-lg-11 title-login">SIGERE</span>
                 <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Logout</button>
             </div>
+            <nav class="navbar navbar-toggleable-md navbar-light bg-info">
+                <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <a class="navbar-brand" href="#">Navbar</a>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav">
+                        <li class="nav-item active">
+                            <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Features</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Pricing</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link disabled" href="#">Disabled</a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
 
             <?= view('home/modal_logout')->render(); ?>
 
