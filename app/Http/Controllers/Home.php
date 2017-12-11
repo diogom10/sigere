@@ -29,8 +29,8 @@ class Home extends Controller {
         $eletronics = Lib_energia::getEletronic($Dados["user_id"]);
 
         if(count($eletronics) > 0){
-
-            $energia_data = Lib_energia::getDataEnergia($Dados["user_id"] ,  $eletronics );
+            $energia_data = Lib_energia::OrganizaDataEnergia($Dados["user_id"] ,  $eletronics );
+            print_r( $energia_data).die();
         }else{
             $Response['success'] = false;
             $Response['msg'] = "Usuario Não Cadastrou Nenhum Aparelho";
