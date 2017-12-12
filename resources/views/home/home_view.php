@@ -57,11 +57,14 @@
 
             <?= view('home/modal_logout')->render(); ?>
 
-            <div ng-repeat="a in array track by $index" ng-init="graficos($index , teste)">
-              <div class="col-md-12 col-sm-12 col-xs-4 col-lg-4">
-                  <h1>{{$index}}</h1>
-                <canvas id="line" class="chart chart-line ng-isolate-scope" chart-data="data[$index]" chart-labels="labels[$index]" chart-series="series" chart-options="options"></canvas>
-             </div>
+
+            <div ng-repeat="a in energy" ng-init="sectionIndex = $index">
+                <div class="col-md-12 col-sm-12 col-xs-4 col-lg-4">
+                    <canvas id="line" class="chart chart-line ng-isolate-scope" chart-data="data[$index]" chart-labels="labels[$index]" chart-series="series[$index]" chart-options="options"></canvas>
+                </div>
+                <div ng-repeat="e in a  track by $index" ng-init="graficos(sectionIndex , $index ,e)">
+
+                </div>
             </div>
 
 

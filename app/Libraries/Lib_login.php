@@ -24,10 +24,7 @@ class Lib_login{
            
        return $Retorno;
   }
-  
-  
-  
-  
+
   
    public static function validateCadastro($Data){
        
