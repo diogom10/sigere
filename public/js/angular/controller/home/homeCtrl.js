@@ -49,7 +49,7 @@ angular.module("sigere_home", ["chart.js"]).controller("homeCtrl", ['$scope', '$
         $scope.data[indexFather] = [
             datas
         ];
-
+//coments
         $scope.onClick = function (points, evt) {
             console.log(points, evt);
         };
