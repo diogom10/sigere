@@ -68,13 +68,23 @@
                     </ul>
                 </div>
             </nav>
-
+ 
             <?= view('home/modal_logout')->render(); ?>
 
+<<<<<<< HEAD
             <div ng-repeat="a in array track by $index" ng-init="graficos($index , teste)">
                 <div class="col-md-12 col-sm-12 col-xs-4 col-lg-4">
                     <h1>{{$index}}</h1>
                     <canvas id="line" class="chart chart-line ng-isolate-scope" chart-data="data[$index]" chart-labels="labels[$index]" chart-series="series" chart-options="options"></canvas>
+=======
+
+            <div ng-repeat="a in energy" ng-init="sectionIndex = $index">
+                <div class="col-md-12 col-sm-12 col-xs-4 col-lg-4">
+                    <canvas id="line" class="chart chart-line ng-isolate-scope" chart-data="data[$index]" chart-labels="labels[$index]" chart-series="series[$index]" chart-options="options"></canvas>
+                </div>
+                <div ng-repeat="e in a  track by $index" ng-init="graficos(sectionIndex , $index ,e)">
+
+>>>>>>> 6e3118d8de9d01599d34c094e385d55f1e6d2767
                 </div>
             </div>
 
