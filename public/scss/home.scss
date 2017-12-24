@@ -1,5 +1,5 @@
 body{
-    overflow: hidden;
+
     .cabecalho{
         background-color: #4fa7c1;
         max-height:60px;
@@ -14,13 +14,33 @@ body{
     }
 
 
+
+    .body-cor{
+        background-color: #dedede;
+    }
+    .p-graficos{
+        background-color:#fff;
+        margin-left:12%;
+        .i-graficos{
+            margin-top: 4%;
+            margin-left: 6%;
+        }
+        .p-checkbox{
+            margin-bottom: 3%;
+            margin-left: 28%;
+        }
+    }
+
+
     .rodape{
-        margin-top: 22%;
+      //  margin-top: 22%;
         padding-bottom: 64px;
         background-color: #4fa7c1;
-        position: fixed;
+        //position: fixed;
         bottom:0;
     }
+
+
 
 
 }

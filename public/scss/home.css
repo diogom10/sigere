@@ -1,20 +1,27 @@
-body {
-  overflow: hidden; }
-  body .cabecalho {
-    background-color: #4fa7c1;
-    max-height: 60px;
+body .cabecalho {
+  background-color: #4fa7c1;
+  max-height: 60px;
+  text-align: center;
+  z-index: 1; }
+  body .cabecalho .title-login {
     text-align: center;
-    z-index: 1; }
-    body .cabecalho .title-login {
-      text-align: center;
-      color: #fff;
-      font-size: 50px;
-      font-family: arial; }
-  body .rodape {
-    margin-top: 22%;
-    padding-bottom: 64px;
-    background-color: #4fa7c1;
-    position: fixed;
-    bottom: 0; }
+    color: #fff;
+    font-size: 50px;
+    font-family: arial; }
+body .body-cor {
+  background-color: #dedede; }
+body .p-graficos {
+  background-color: #fff;
+  margin-left: 12%; }
+  body .p-graficos .i-graficos {
+    margin-top: 4%;
+    margin-left: 6%; }
+  body .p-graficos .p-checkbox {
+    margin-bottom: 3%;
+    margin-left: 28%; }
+body .rodape {
+  padding-bottom: 64px;
+  background-color: #4fa7c1;
+  bottom: 0; }
 
 /*# sourceMappingURL=home.css.map */

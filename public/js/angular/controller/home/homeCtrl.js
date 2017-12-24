@@ -9,8 +9,11 @@ angular.module("sigere_home", ["chart.js"]).controller("homeCtrl", ['$scope', '$
     $scope.isEnergia = false;
     $scope.labels = [];
     $scope.series = [];
+    $scope.series = [];
     $scope.data = [] ;
     $scope.array = [];
+    $scope.kw = [];
+    $scope.isKw = false;
 
     var times = [];
     var datas = [];
@@ -21,6 +24,7 @@ angular.module("sigere_home", ["chart.js"]).controller("homeCtrl", ['$scope', '$
         homeService.getEnergia(user_id, base_url+"/getEnergia").then(function (response) {
             if (response.data.success) {
                 $scope.energy = response.data.energia;
+                console.log($scope.energy);
             } else {
 
             }
@@ -29,14 +33,27 @@ angular.module("sigere_home", ["chart.js"]).controller("homeCtrl", ['$scope', '$
 
     $scope.energia();
 
-    $scope.choiceUnidade = function(type){
-        $scope.isEnergia = type;
+    $scope.addKw = function(index, energia, isKw){
 
-    }
+        if(isKw) {
+            energia.forEach(function (data) {
+                $scope.kw.push(data.energia);
+
+            });
+
+            $scope.data[index].push( $scope.kw);
+            $scope.series[index].push(energia[0].uniMedidaK);
+            $scope.kw = [];
+        }else{
+            $scope.data[index].splice(1, 1);
+            $scope.series[index].splice(1, 1);
+            $scope.kw = [];
+        }
+    };
 
 
     $scope.graficos = function(indexFather ,indexChild ,  dados) {
-       var valor;
+        var valor;
 
         if(indexChild == 0) {
             times = [];
@@ -59,9 +76,10 @@ angular.module("sigere_home", ["chart.js"]).controller("homeCtrl", ['$scope', '$
             series.push(dados.uniMedidaR);
         }
         $scope.labels[indexFather] =  times;
-        $scope.series[indexFather] =  ($scope.isEnergia ? series2 : series )
+        $scope.series[indexFather] =  [
+            series];
         $scope.data[indexFather] = [
-             valor = ($scope.isEnergia ? datas2 : datas )
+            datas
         ];
 //coments
         $scope.onClick = function (points, evt) {

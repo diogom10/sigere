@@ -27,14 +27,13 @@ class Home extends Controller {
         $Response = [];
 
         $eletronics = Lib_energia::getEletronic($Dados["user_id"]);
-
+        // print_r($eletronics).die();
         if(count($eletronics) > 0){
             $energia_data = Lib_energia::OrganizaDataEnergia($Dados["user_id"] ,$eletronics);
-            if(count($energia_data) > 0){
+            if(count($energia_data > 0)){
               $Response['success'] = true;
               $Response['energia'] = $energia_data;
             }
-
         }else{
             $Response['success'] = false;
             $Response['msg'] = "Usuario Não Cadastrou Nenhum Aparelho";
