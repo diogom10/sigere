@@ -36,27 +36,40 @@
                 <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
-                <a class="navbar-brand" href="#">Navbar</a>
+                <a class="navbar-brand" href="#">Sigere</a>
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav">
                         <li class="nav-item active">
                             <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Features</a>
+
+                        
+                        <li class="nav-item active dropdown">
+                            <a class="nav-link dropdown-toggle" href="" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Equipamentos
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                                <a class="dropdown-item" href="#">Visualizar</a>
+                                <a class="dropdown-item" href="#">Cadastrar</a>
+                                <a class="dropdown-item" href="#">Editar</a>
+                                <a class="dropdown-item" href="#">Deletar</a>
+                            </div>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Pricing</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link disabled" href="#">Disabled</a>
+                        <li class="nav-item active dropdown">
+                            <a class="nav-link dropdown-toggle" href="" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Relatório
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                                <a class="dropdown-item" href="#">Dia</a>
+                                <a class="dropdown-item" href="#">Mês</a>
+                                <a class="dropdown-item" href="#">Ano</a>
+                            </div>
                         </li>
                     </ul>
                 </div>
             </nav>
+            <?= view('home/modal_logout')->render(); ?>
 
-            <button type="button" class="btn btn-success" ng-click="choiceUnidade(false)">R$</button>
-            <button type="button" class="btn btn-success" ng-click="choiceUnidade(true)">KW/H</button>
 
             <div ng-repeat="a in energy" ng-init="sectionIndex = $index">
                 <div class="col-md-12 col-sm-12 col-xs-4 col-lg-4">

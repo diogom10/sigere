@@ -11,7 +11,14 @@ class Lib_global{
 
         return $date[0];
     }
-
+    
+    public static function dateTime($data)
+  {
+      $data = new DateTime();
+      $formatoDataHora = $data->format('d-m-Y H:i:s');
+      return $formatoDataHora;      
+       
+  }
 
 
 }
