@@ -55,8 +55,8 @@
                 </div>
             </nav>
 
-            <?= view('home/modal_logout')->render(); ?>
-
+            <button type="button" class="btn btn-success" ng-click="choiceUnidade(false)">R$</button>
+            <button type="button" class="btn btn-success" ng-click="choiceUnidade(true)">KW/H</button>
 
             <div ng-repeat="a in energy" ng-init="sectionIndex = $index">
                 <div class="col-md-12 col-sm-12 col-xs-4 col-lg-4">

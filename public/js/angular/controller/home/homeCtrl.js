@@ -6,7 +6,7 @@ angular.module("sigere_home", ["chart.js"]).controller("homeCtrl", ['$scope', '$
     var user_id = angular.element('#user_id').val();
     $scope.energy = '';
     $scope.eletronics = '';
-
+    $scope.isEnergia = false;
     $scope.labels = [];
     $scope.series = [];
     $scope.data = [] ;
@@ -14,8 +14,9 @@ angular.module("sigere_home", ["chart.js"]).controller("homeCtrl", ['$scope', '$
 
     var times = [];
     var datas = [];
+    var datas2 = [];
     var series = [];
-
+    var series2 = [];
     $scope.energia = function() {
         homeService.getEnergia(user_id, base_url+"/getEnergia").then(function (response) {
             if (response.data.success) {
@@ -28,26 +29,39 @@ angular.module("sigere_home", ["chart.js"]).controller("homeCtrl", ['$scope', '$
 
     $scope.energia();
 
+    $scope.choiceUnidade = function(type){
+        $scope.isEnergia = type;
+
+    }
 
 
     $scope.graficos = function(indexFather ,indexChild ,  dados) {
+       var valor;
 
         if(indexChild == 0) {
             times = [];
             datas = [];
             series = [];
+            series2 = [];
+            datas2  = [];
+
             times.push(dados.data_hora);
             datas.push(dados.reais);
+            datas2.push(dados.energia);
+            series2.push(dados.uniMedidaR);
             series.push(dados.uniMedidaR);
+
         }else{
+            series2.push(dados.uniMedidaR);
+            datas2.push(dados.energia);
             times.push(dados.data_hora);
             datas.push(dados.reais);
             series.push(dados.uniMedidaR);
         }
         $scope.labels[indexFather] =  times;
-        $scope.series[indexFather] =  series;
+        $scope.series[indexFather] =  ($scope.isEnergia ? series2 : series )
         $scope.data[indexFather] = [
-            datas
+             valor = ($scope.isEnergia ? datas2 : datas )
         ];
 //coments
         $scope.onClick = function (points, evt) {
