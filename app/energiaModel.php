@@ -11,4 +11,8 @@ class energiaModel extends Model
         $query = DB::table('tb_user_x_tb_eletronic')->insert($dados);
         return $query;
     }
+
+    public function cadastrarEnergia($dados) {
+        DB::table('tb_data')->insert($dados);
+    }
 }

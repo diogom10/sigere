@@ -3,6 +3,7 @@ namespace App\Libraries;
 
 use App\Libraries\Lib_global;
 use Illuminate\Support\Facades\DB;
+use App\energiaModel;
 
 class Lib_energia{
 
@@ -70,5 +71,15 @@ class Lib_energia{
         }
 
         return $query;
+    }
+
+    public static function setDataEnergia($data){
+        $model = new energiaModel();
+        $model->cadastrarEnergia($data);
+        return true;
+    }
+
+    public static function convertToReal($data){
+
     }
 }

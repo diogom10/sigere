@@ -21,10 +21,11 @@ angular.module("sigere_home", ["chart.js"]).controller("homeCtrl", ['$scope', '$
     var series = [];
     var series2 = [];
     $scope.energia = function() {
+
         homeService.getEnergia(user_id, base_url+"/getEnergia").then(function (response) {
             if (response.data.success) {
                 $scope.energy = response.data.energia;
-                console.log($scope.energy);
+                console.log(base_url);
             } else {
 
             }
@@ -65,11 +66,11 @@ angular.module("sigere_home", ["chart.js"]).controller("homeCtrl", ['$scope', '$
             times.push(dados.data_hora);
             datas.push(dados.reais);
             datas2.push(dados.energia);
-            series2.push(dados.uniMedidaR);
-            series.push(dados.uniMedidaR);
+            // series2.push(dados.uniMedidaR);
+            // series.push(dados.uniMedidaR);
 
         }else{
-            series2.push(dados.uniMedidaR);
+            // series2.push(dados.uniMedidaR);
             datas2.push(dados.energia);
             times.push(dados.data_hora);
             datas.push(dados.reais);
@@ -77,7 +78,7 @@ angular.module("sigere_home", ["chart.js"]).controller("homeCtrl", ['$scope', '$
         }
         $scope.labels[indexFather] =  times;
         $scope.series[indexFather] =  [
-            series];
+            'R$'];
         $scope.data[indexFather] = [
             datas
         ];

@@ -72,14 +72,15 @@ if (!session()->get('user_status_login')) {
     <div class="col-md-12 col-sm-12 col-xs-12 col-lg-12 body-cor">
         <div class="col-md-10 col-sm-12 col-xs-12 col-lg-10 p-graficos">
             <div ng-repeat="a in energy" ng-init="sectionIndex = $index">
-                <div class="col-md-5 col-sm-12 col-xs-12 col-lg-5 i-graficos">
-               <span  class="p-checkbox">KW/H
+                <div class="col-md-5 col-sm-12 col-xs-12 col-lg-5">
+                <span  class="p-checkbox">KW/H
                 <input type="checkbox" value="KW/H" ng-model="isKw" ng-change="addKw($index, a , isKw)">
                </span>
                     <canvas id="line" class="chart chart-line ng-isolate-scope" chart-data="data[$index]" chart-labels="labels[$index]" chart-series="series[$index]" chart-options="options"></canvas>
                 </div>
                 <div ng-repeat="e in a  track by $index" ng-init="graficos(sectionIndex , $index ,e)">
                 </div>
+
             </div>
         </div>
     </div>

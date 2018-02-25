@@ -21,3 +21,4 @@ Route::any('/Cadastro ','Login@setCadastro');
 Route::any('/home','Home@homeUser');
 Route::any('/logout','Home@logout');
 Route::any('/getEnergia','Home@getEnergia');
+Route::any('/setEnergia','Home@setEnergia');
